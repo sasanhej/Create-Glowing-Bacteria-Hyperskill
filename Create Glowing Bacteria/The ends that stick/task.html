@@ -1,0 +1,38 @@
+<div class="step-text">
+<h5 id="description">Description</h5>
+<p>Unlike plasmid, GFP has two sticky ends on the left and right sides, because the <strong>insertion </strong>occurs<strong> </strong>in the middle of a plasmid gap (see points 2 and 3 in the figure). Now, you need to obtain GFP with sticky ends. For GFP, the best restriction site is <code class="language-python">CTGCAG</code><strong> </strong>from the left<strong> </strong>and <code class="language-python">GTGCAC</code> from the right.</p>
+<p><img alt="The Principle of Complementarity" height="430" name="glowing_bacteria.png" src="https://ucarecdn.com/a8b60d3e-be08-4028-ae0e-a6de142433a0/" width="588"/></p>
+<p>To visualize the process of restriction, you can watch the <a href="https://www.youtube.com/watch?v=GJrAsW41a64&amp;ab_channel=NicoleLantz" rel="noopener noreferrer nofollow" target="_blank">video</a> on YouTube by Nicole Lantz.</p>
+<p>Your may work as follows:</p>
+<ol>
+<li>In GFP original sequence, find the first entrance of the <code class="language-python">CTGCAG</code><strong> </strong>from the left and the first entrance of the <code class="language-python">GTGCAC</code> site from the right.</li>
+<li>Make a cut in the <code class="language-python">CTGCAG</code> site between 1<sup>st</sup> and 2<sup>nd</sup> nucleotides (<code class="language-python">C</code> and <code class="language-python">T</code>). Also make a cut in the <code class="language-python">GTGCAC</code> site between 1<sup>st</sup> and 2<sup>nd</sup> nucleotides (<code class="language-python">G</code> and <code class="language-python">T</code>).</li>
+<li>Create a complementary GFP strand and complementary strands for both restriction sites based on your knowlegde from the stage 1.</li>
+<li>In GFP complementary sequence, find the first entrance of the site complementary to the <code class="language-python">CTGCAG</code> site from the left. Cut it between 5<sup>th</sup> and 6<sup>th</sup> nucleotides (<code class="language-python">T</code> and <code class="language-python">C</code>).</li>
+<li>In the same GFP strand, find the first entrance of the site complementary to the <code class="language-python">GTGCAC</code> site from the right. Cut it between 5<sup>th</sup> and 6<sup>th</sup> nucleotides (<code class="language-python">T</code> and <code class="language-python">G</code>).</li>
+</ol>
+<p>Another way to obtain GFP cuts is presented in Objectives. You may use either method at your discretion.</p>
+<p>The GFP gene with restriction site positions, which are marked with <code class="language-python">_</code> characters, you can find below:</p>
+<pre><code class="language-python">GCATGC_CTGCAG_GTCGACTCTAGAGGATCCCCGGGTACCTAGAATTAAAGAGGAGAAATTAAGCATGCGTAAAGGAGAAGAACTTTTCACTGGAGTTGTCCCAATTCTTGTTGAATTAGATGGTGATGTTAATGGGCACAAATTTCTGTCAGTGGAGAGGGTGAAGGTGATGCAACATACGGAAAACTTACCCTTAAATTTATTTGCACTACTGGAAAACTACCTGTTCCATGGCCAACACTTGTCACTACTTTCGGTTATGGTGTTCAATGCTTTGCGAGATACCCAGATCATATGAAACAGCATGACTTTTTCAAGAGTGCCATGCCCGAAGGTTATGTACAGGAAAGAACTATATTTTTCAAAGATGACGGGAACTACAAGACACGTGCTGAAGTCAAGTTTGAAGGTGATACCCTTGTTAATAGAATCGAGTTAAAAGGTATTGATTTTAAAGAAGATGGAAACATTCTTGGACACAAATTGGAATACAACTATAACTCACACAATGTATACATCATGGCAGACAAACAAAAGAATGGAATCAAAGTTAACTTCAAAATTAGACACAACATTGAAGATGGAAGCGTTCAACTAGCAGACCATTATCAACAAAATACTCCAATTGGCGATGGCCCTGTCCTTTTACCAGACAACCATTACCTGTCCACACAATCTGCCCTTTCGAAAGATCCCAACGAAAAGAGAGACCACATGGTCCTTCTTGAGTTTGTAACAGCTGCTGGGATTACACATGGCATGGATGAACTATACAAAAGGCCTGCAGCAAACGACGAAAACTACGCTTTAGTAGCTTAATAAGCTTAATTAGCTGACCTACTAGTCGGCCGTCTCGACATGAACGCAGGAAAGAACATGTGAGCAAAAGGCCAGCAAAAGGCCAGGAACCGTAAAAAGGCCGCGTTGCTGGCGTTTTTCCATAGGCTCCGCCCCCCTGACGAGCATCACAAAAATCGACGCTCAAGTCAGAGGTGGCGAAACCCGACAGGACTATAAAGATACCAGGCGTTTCCCCCTGGAAGCTCCCTCGTGCGCTCTCCTGTTCCGACCCTGCCGCTTACCGGATACCTGTCCGCCTTTCTCCCTTCGGGAAGCGTGGCGCTTTCTCAATGCTCACGCTGTAGGTATCTCAGTTCGGTGTAGGTCGTTCGCTCCAAGCTGGGCTGT_GTGCAC_GAACCCCCCGT</code></pre>
+<p>In your case, there will be no <code class="language-python">_</code> characters. Don't create your code around it.</p>
+<h5 id="objectives">Objectives</h5>
+<ol>
+<li>Input the original GFP gene sequence and restriction sites from the console;</li>
+<li>To automate the action of getting the sticky ends in the GFP plasmid, we recommend implementing a function that will (or you can use another way from the Description part):
+	<ul>
+<li>Create complementary sequences for the GFP gene and for the restriction sites;</li>
+<li>Find the restriction site CTGCAG at the beginning of the sequence, and cut both strands: the original one between 1<sup>st</sup> and 2<sup>nd</sup> nucleotides, and the complementary one between 5<sup>th</sup> and 6<sup>th</sup> nucleotides. As a result of this step, we will get a protruding sticky end on the original GFP chain;</li>
+<li>Find the GTGCAC restriction site at the end of the sequence, and cut through it similarly to the previous point;</li>
+<li>Return the resulting GFP chains.</li>
+</ul>
+</li>
+</ol>
+<p>As a result, print the double-stranded GFP sequence with sticky ends. The original and complementary strands should be separated by a newline character (<code class="language-python">\n</code>).</p>
+<h5 id="example">Example</h5>
+<p>The greater-than symbol followed by a space (<code class="language-python">&gt; </code>) represents the console input.</p>
+<p><strong>Example 1:</strong> <em>input of the original strand and the restriction sites</em></p>
+<pre><code class="language-python">&gt; CCTGCAGGTCGACTCTAGAGGATCCCCGGGTACCTAGAATTGCACGCA
+&gt; CTGCAG TTGCAC
+TGCAGGTCGACTCTAGAGGATCCCCGGGTACCTAGAAT  # the output starts here
+CCAGCTGAGATCTCCTAGGGGCCCATGGATCTTAACGT</code></pre>
+</div>
